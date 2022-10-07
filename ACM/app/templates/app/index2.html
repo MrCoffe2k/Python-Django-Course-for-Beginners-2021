@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion ACM</title>
+    <link rel="stylesheet" href="{% static 'app/styles/base.css' %}">
+</head>
+
+<body>
+    <h1>Agenda de control medico</h1>
+    <p>Hola mundo</p>
+    {% if show_app %}
+        {% for app_item in app %}
+        <p>{{ app_item.title }}</p>
+        <!--<h2>{{ app.0.title }}</h2>-->
+        {% endfor %}
+    {% else %}
+    <p>Sin acceso a la app</p>
+    {% endif %}
+</body>
+
+</html>

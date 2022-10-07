@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion ACM</title>
+    <link rel="stylesheet" href="{% static 'app/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'app/styles/all-app.css' %}">
+</head>
+
+<body>
+    <header id="main-header">
+        <nav><a href="/app" id="main-logo">DjangoApp</a></nav>
+        <h1>Aplicacion en proceso</h1>
+        <p>Aplicacion de control de agenda medica</p>
+    </header>
+    <main>
+        <section>
+            <h2>Procesando aplicacion</h2>
+            <ol>
+                {% for app_item in app %}
+                <li class="app-item">
+                    <article>
+                        <div class="app-summary">
+                            <div class="app-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="app-details">
+                                <h3>{{ app_item.title }}</h3>
+                                <address>{{ app_item.location }}</address>
+                            </div>
+                        </div>
+                        <div class="app-actions">
+                            <a href="" class="btn">More details</a>
+                        </div>
+                    </article>
+                </li>
+                {% endfor %}
+            </ol>
+        </section>
+    </main>
+</body>
+
+</html>
